@@ -802,7 +802,7 @@ class Mission
 			vehicle="USBasicWeaponsBox";
 			skill=0.60000002;
 			text="USVehicleBox";
-			init="nul = [this] execVM ""script\crate_av.sqf""";
+			init="nul = ['', this] execVM ""script\crate_av.sqf""";
 		};
 	};
 	class Markers

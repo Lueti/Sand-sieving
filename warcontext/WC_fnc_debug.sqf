@@ -39,7 +39,7 @@
 			];
 			hintsilent _text;
 			if (wcdebugcopytoclipboard) then {
-				copyToClipboard _text;
+				copyToClipboard format["%1", position player];
 			};
 			sleep 4;
 			onMapSingleClick "player setPos _pos; true;";

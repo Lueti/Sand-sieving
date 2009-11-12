@@ -1,19 +1,19 @@
-/*
-Original Script 
-objectMapper.sqf Author: Joris-Jan van 't Land
-Edited by armatec
-
-	Description:
-	Takes an array of data about a dynamic object template and creates the objects.
-
-	Parameter(s):
-	_this select 0: compositions name - "fuelDepot_us"
-	_this select 1: Direction in degrees - Number 
-	_this select 2: Location to start
+	/*
+	Original Script 
+	objectMapper.sqf Author: Joris-Jan van 't Land
+	Edited by armatec
 	
-	Example:
-	["fuelDepot_us", 0, getpos player] execVM "Createcomposition.sqf";
-*/
+		Description:
+		Takes an array of data about a dynamic object template and creates the objects.
+	
+		Parameter(s):
+		_this select 0: compositions name - "fuelDepot_us"
+		_this select 1: Direction in degrees - Number 
+		_this select 2: Location to start
+		
+		Example:
+		["fuelDepot_us", 0, getpos player] execVM "Createcomposition.sqf";
+	*/
 
 	_script = _this select 0;
 	_azi 	= _this select 1;
@@ -55,7 +55,7 @@ Edited by armatec
 			private ["_z"];
 			if ((count _relPos) > 2) then {_z = _relPos select 2} else {_z = 0};
 			_newPos = [_posX + (_newRelPos select 0), _posY + (_newRelPos select 1), _z];
-			_newObj = _type createVehiclelocal _newPos;
+			_newObj = _type createVehicle _newPos;
 			_newObj setDir (_azi + _azimuth);
 			_newObj setPos _newPos;
 			if (!isNil "_fuel") then {_newObj setFuel _fuel};

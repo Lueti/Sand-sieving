@@ -1,8 +1,9 @@
 
 
 	private [
-		"_crate",
-		"_position"
+		"_position",
+		"_crate"
+
 	];
 	
 	_position = _this select 0;
@@ -12,9 +13,6 @@
 		_crate = "USVehicleBox" createVehiclelocal _position;
 		_crate setposasl _position;
 	};
-
-
-	_crate = _this select 0;
 
 	clearMagazineCargo _crate;
 	clearWeaponCargo _crate;

@@ -1,3 +1,4 @@
+	player exec "Intro.sqs";
 	viewdist = 1500 ;
 	setviewdistance (viewdist);
 	wcskill = 1;
@@ -29,10 +30,8 @@
 	WC_fnc_decreaseterraingrid = compile preprocessFile "warcontext\WC_fnc_decreaseterraingrid.sqf";
 	
 	nil = [] call func_createzone;
-	
+
 	server execVM "revive_init.sqf";
-
-
 
 	nil = [] spawn WC_fnc_debug;
 
