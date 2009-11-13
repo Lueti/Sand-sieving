@@ -39,7 +39,10 @@
 	// wcdebugstartposition	= [7000, 7000,0];
 
 	// size of dynamic zone generation. At 1500 of zone IA will begin to generate 
-	wctriggersize 	= 450;
+	wctriggersize = 450;
+
+	// time in secondes before to garbage dead body
+	wctimetogarbagedeadbody = 120;
 
 	// maximun of enemy on map
 	wcmaxenemyonmap = 1000;
