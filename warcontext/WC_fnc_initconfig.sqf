@@ -30,7 +30,7 @@
 	wcmissions = [];
 
 	// debug for warcontext 
-	wcdebug	= false;
+	wcdebug	= true;
 
 	// copy debug to clipboard output
 	// wcdebugcopytoclipboard = false;	
