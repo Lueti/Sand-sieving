@@ -4,6 +4,7 @@
 // -----------------------------------------------
 
 	if (wcdebug) then {
+		player allowdammage false;
 		if (!isnil ("wcdebugstartposition")) then {player setpos wcdebugstartposition;};
 		while{(true)} do {
 			wcdebugcoord = getposasl player;

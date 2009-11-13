@@ -1,33 +1,18 @@
-// -----------------------------------------------
-// Author: =[A*C]= code34 nicolas_boiteux@yahoo.fr
-// warcontext 
-// -----------------------------------------------
-private [
-	"_targetname",
-	"_markername",
-	"_position", 
-	"_markersize", 
-	"_triggersize",  
-	"_antenne",
-	"_typeofgroup"
-	];
-
-// IA level : 1 is stronger
-//wcskill		= 1;
-
-// max random number of IA
-wcrandom	= 2;
-
-// size of dynamic zone generation. At 400 of zone IA will begin to generate 
-_triggersize 	= 450;
-
-// friendly side
-wcside 		= "west";
-
-// enemy side
-wcenemyside	= EAST;
-
-// zone definition position, name, size of zone, units in zone, radio tower or not
+		// -----------------------------------------------
+		// Author: =[A*C]= code34 nicolas_boiteux@yahoo.fr
+		// warcontext 
+		// -----------------------------------------------
+		private [
+			"_targetname",
+			"_markername",
+			"_position", 
+			"_markersize",  
+			"_antenne",
+			"_typeofgroup"
+			];
+		
+	
+		// zone definition position, name, size of zone, units in zone, radio tower or not
 		_targetname = [
 			[[333,3606,0],"z01",150,["g8","g1"], false],
 			[[1953,1846,0],"z02",150,["g3","g1"], false],
@@ -120,31 +105,18 @@ wcenemyside	= EAST;
 			[[2191,2791,0],"z89",250,["g4","g4","g4","g4"], false],
 			[[2129,2905,0],"z90",70,["g2"], false],
 			[[2058,3275,0],"z91",70,["g8","g1"], false],
-			[[1844,2603,0],"z92",70,["g3","g1"], false],
-			[[2341,2541,0],"z93",2000,["pickup","pickup","pickup","pickup","pickup","pickup","pickup_spg"], false]
+			[[1844,2603,0],"z92",70,["g3","g1"], false]
 		];
 
-// do not edit below
-arrayvariables = [];
-countvariables = 0;
-
-{
-_position 	= _x select 0;
-_markername 	= _x select 1;
-_markersize 	= _x select 2;
-_typeofgroup 	= _x select 3;
-_antenne 	= _x select 4;
-
-[_markername, _position, _markersize, _triggersize, wcside, _typeofgroup, _antenne, wcenemyside] spawn func_createtrigger;
-
-} forEach _targetname;
-
-refreshvariables = {
-	{	
-	call compile format["%1 = true; publicvariable %1;", _x];
-	}foreach arrayvariables;
-};
-
-sleep 10; 
-
-onPlayerConnected call refreshvariables;
+	// do not edit below
+	arrayvariables = [];
+	countvariables = 0;
+	
+	{
+		_position 	= _x select 0;
+		_markername 	= _x select 1;
+		_markersize 	= _x select 2;
+		_typeofgroup 	= _x select 3;
+		_antenne 	= _x select 4;
+		[_markername, _position, _markersize, wctriggersize, wcside, _typeofgroup, _antenne, wcenemyside] spawn func_createtrigger;
+	} forEach _targetname;

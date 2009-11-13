@@ -26,9 +26,8 @@ private [
 
 	_line = "";
 	{
-	_line = _line + format ["nil = [%1ups,'%2'] spawn func_creategroup;", _markername, _x];
-	}
-	foreach _typeofgroup;
+	_line = _line + format ["nil = [%1ups,'%2'] spawn WC_fnc_creategroup;", _markername, _x];
+	}foreach _typeofgroup;
 
 	// trick to use marker design on MAP
 	if(_position select 0 != 0) then {
@@ -49,17 +48,8 @@ private [
 	call compile format ["%1trg = createTrigger[""EmptyDetector"",%2];",_markername,_position]; 
 	call compile format ["%1trg setTriggerArea[%2,%2,0,false];",_markername,_triggersize];
 	//call compile format ["%1trg setTriggerTimeout [20, 20, 20, false ];", _markername];
-	call compile format ["%1trg setTriggerActivation[""%2"",""PRESENT"",false];",_markername,_side];
+	call compile format ["%1trg setTriggerActivation[""%2"",""PRESENT"",false];",_markername, _side];
 	call compile format ["%1trg setTriggerStatements[""this"", ""%2"", """"];", _markername, _line];
-
-	call compile format ["%1trgsanity = createTrigger[""EmptyDetector"",%2];",_markername,_position]; 
-	call compile format ["%1trgsanity setTriggerArea[%2,%2,0,false];",_markername,_triggersize];
-	//call compile format ["%1trgsanity setTriggerTimeout [20, 20, 20, false ];", _markername];
-	call compile format ["%1trgsanity setTriggerActivation[""%2"",""PRESENT"",false];",_markername,_enemyside];
-	call compile format ["%1trgsanity setTriggerStatements[""this"", "" 
-	nil = [thislist, 0, 0] execVM 'DynBr\DynBr_init.sqf';
-	"", """"];", _markername, _line];
-
 
 	call compile format ["%1trgend = createTrigger[""EmptyDetector"",%2];", _markername, _position];
 	call compile format ["%1trgend setTriggerArea[%2,%2,0,false];", _markername, _markersize];

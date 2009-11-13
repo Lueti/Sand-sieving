@@ -25,14 +25,16 @@ class Mission
 		"CAWheeled2_Kamaz",
 		"USMC_DESERT_SOLDIERS",
 		"ffaa_terrorista",
-		"BB_Mercenary"
+		"BB_Mercenary",
+		"ca_modules_clouds",
+		"ca_modules_animals"
 	};
 	addOnsAuto[]=
 	{
 		"USMC_DESERT_SOLDIERS",
 		"ca_modules_functions",
-		"ffaa_terrorista",
-		"BB_Mercenary",
+		"ca_modules_clouds",
+		"ca_modules_animals",
 		"camisc3",
 		"CAWheeled",
 		"caweapons",
@@ -43,7 +45,9 @@ class Mission
 	randomSeed=10399773;
 	class Intel
 	{
-		briefingName="=[A*C]=Sand Sieving beta";
+		briefingName="=[A*C]=Sand Sieving 0.100";
+		resistanceWest=0;
+		resistanceEast=1;
 		startWeather=0.057273924;
 		forecastWeather=0;
 		year=2008;
@@ -54,7 +58,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=11;
+		items=12;
 		class Item0
 		{
 			side="WEST";
@@ -603,17 +607,16 @@ class Mission
 		};
 		class Item9
 		{
-			side="EAST";
+			side="LOGIC";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2691.6719,104.50771,3127.2913};
-					azimut=40;
+					position[]={4612.3047,119.93857,1753.4446};
 					id=59;
-					side="EAST";
-					vehicle="ffaa_terrorista_agf_AK";
+					side="LOGIC";
+					vehicle="FunctionsManager";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -621,17 +624,33 @@ class Mission
 		};
 		class Item10
 		{
-			side="EAST";
+			side="LOGIC";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2599.2432,107.58778,3263.3159};
-					azimut=185;
+					position[]={4596.9238,124.55402,1577.3093};
 					id=60;
-					side="EAST";
-					vehicle="ETerrorist1";
+					side="LOGIC";
+					vehicle="BIS_clouds_Logic";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item11
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4545.811,122.55646,1121.896};
+					id=61;
+					side="LOGIC";
+					vehicle="BIS_animals_Logic";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -829,13 +848,29 @@ class Mission
 	};
 	class Sensors
 	{
-		items=1;
+		items=2;
 		class Item0
 		{
-			position[]={4931.5044,91.59832,3448.1646};
-			interruptable=1;
+			position[]={2522.3455,115.64914,3288.532};
+			a=550;
+			b=550;
+			activationBy="ANY";
 			type="END6";
 			age="UNKNOWN";
+			expCond="(EAST countSide thislist < 10) and (WEST countside thislist > 0)";
+			class Effects
+			{
+				titleType="TEXT";
+				title="Town is clear";
+			};
+		};
+		class Item1
+		{
+			position[]={2493.9385,112.62981,1177.811};
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="local player";
+			expActiv="nil = [] execVM ""warcontext\WC_fnc_clientside.sqf"";";
 			class Effects
 			{
 			};

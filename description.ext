@@ -17,6 +17,9 @@ respawn = "BASE";
 respawndelay = 4;
 disabledAI = 1;
 
+#include "dialog\Dlg\define.hpp"
+#include "dialog\Dlg\ac_info.hpp"
+#include "dialog\Dlg\Settings.hpp"
 #include "revive_sqf\dialogs\config.cpp"
 #include "revive_sqf\dialogs\define.hpp"
 #include "revive_sqf\dialogs\rev_cam_dialog.hpp"
@@ -51,29 +54,6 @@ textsParam2[] = {"No Revive","Infinite - Cadet","20 - Easy ","10 - Normal","7  -
 #define FontS "TahomaB"
 #define FontZ 		"Zeppelin32"
 
-class RscPicture
-{
-type=0;
-idc=-1;
-style=2;
-colorBackground[]={0,0,0,0};
-colorText[]={1,1,1,1};
-font="BitStream";
-size=1;
-};
-
-class RscText
-{
-	type = CT_STATIC;
-	idc = -1;
-	style = ST_LEFT;
-	h = 0.04; 
-	colorBackground[] = {0, 0, 0, 0};
-	colorText[] = {TextColor, 0.75};
-  	font = FontS;
-	sizeEx = 0.02;
-};
-
 class RscTitles
 {
 	titles[]={"img", "STARRING"};
@@ -101,7 +81,7 @@ class RscTitles
 			{
 				style="16+2+512+256";
 				lineSpacing=0.950000;
-				text="PRESENT";
+				text="PRESENTS";
 				x=0.4;
 				y=0.73;
 				w=0.900000;
@@ -139,5 +119,149 @@ class RscTitles
 
 		};
 	};
+
+	class ENGINE
+	{
+		idd=0;
+		movingEnable=0;
+		duration=6;
+		name="ENGINE";
+		controls[]={"ST"};
+
+		class ST: RscText
+		{
+			style="16+2+512+256";
+			lineSpacing=0.950000;
+			text="PROPULSED by WARCONTEXT II";
+			x=0.45;
+			y=0.73;
+			w=0.900000;
+			h=0.700000;
+                        colorBackground[]={0,0,0,0};
+	                colorText[]={1,1,1,1};
+	                font="TahomaB";
+	                size=0.57;
+
+		};
+	};
 };	
 
+class Params
+{ 
+	class Time
+	{
+		//paramsArray[2]
+		title = "TIME OF DAY";
+		values[] = {-6, 0, 6, 12};
+		texts[] = {"Morning", "Clear day", "Sundown", "Night"};
+		default = 0;
+	};
+
+	class GAMEMODE
+	{
+		//paramsArray[3]
+		title = "GAME MODE";
+		values[] = {0, 1};
+		texts[] = {"Random", "Campaign"};
+		default = 0;
+	};
+
+	class AASITE
+	{
+		//paramsArray[4]
+		title = "AA SITE OPPOSITION";
+		values[] = {0, 1, 2, 3, 4};
+		texts[] = {"None", "Easy", "Normal", "Hard", "Hardcore"};
+		default = 0;
+	};
+
+	class SHOWMARKERS
+	{
+		//paramsArray[5]
+		title = "SHOW MARKERS";
+		values[] = {0, 1};
+		texts[] = {"NO", "YES"};
+		default = 1;
+	};
+
+	class IALEVEL
+	{
+		//paramsArray[6]
+		title = "IA LEVEL";
+		values[] = {1, 2, 3, 4};
+		texts[] = {"Easy", "Normal", "Hard", "Hardcore"};
+		default = 4;
+	};
+
+	class AIRFORCE
+	{
+		//paramsArray[7]
+		title = "AIRFORCE OPPOSITION";
+		values[] = {0, 1, 2, 3, 4, 5, 6};
+		texts[] = {"None", "Easy - Mi17, Mi24", "Normal - Mi17, Mi24, Ka52", "Hard - 2xMi17, Ka52, Mi24, Su34", "Hardcore - 3xMi17, 2xKa52, 2xMi24, Su34, Su39", "Hardcore - 4xMi17, 2xMi24, 4xSu34, 2xSu39", "Hardcore - 4xMi17, 8xSu34, 4xSu39"};
+		default = 6;
+	};
+
+	class INFANTRY
+	{
+		//paramsArray[8]
+		title = "INFANTRY OPPOSITION";
+		values[] = {0, 1, 2, 3, 4};
+		texts[] = {"None", "Easy - Max 1 group", "Normal - Max 2 groups", "Hard - Max 4 groups", "Hardcore - Max 8 groups"};
+		default = 3;
+	};
+
+	class ARMORED
+	{
+		//paramsArray[9]
+		title = "ARMORED OPPOSITION";
+		values[] = {0, 1, 2, 3, 4};
+		texts[] = {"None", "Easy - Max 1 armor", "Normal - Max 2 armors", "Hard - Max 4 armors", "Hardcore - Max 8 armors"};
+		default = 3;
+	};
+
+	class TOWN
+	{
+		//paramsArray[10]
+		title = "TOWN OCCUPATION";
+		values[] = {0, 1, 2, 3, 4};
+		texts[] = {"None - 0%", "Few - 25%", "Middle - 50%", "A lot - 75%", "All - 100%"};
+		default = 0;
+	};
+
+	class MISSIONMAX
+	{
+		//paramsArray[11]
+		title = "MISSIONS NUMBER";
+		values[] = {1, 2, 3, 4, 5};
+		texts[] = {"2", "4", "6", "8", "10"};
+		default = 4;
+	};
+
+	class AAINFANTERY
+	{
+		//paramsArray[12]
+		title = "AA INFANTERY";
+		values[] = {0, 1};
+		texts[] = {"No", "Yes"};
+		default = 0;
+	};
+
+	class REINITSCORE
+	{
+		//paramsArray[13]
+		title = "REINIT SCORE IF DIE";
+		values[] = {0, 1};
+		texts[] = {"No", "Yes"};
+		default = 1;
+	};
+
+	class HOSPITALTELEPORT
+	{
+		//paramsArray[14]
+		title = "HOSPITAL TELEPORT";
+		values[] = {0, 1};
+		texts[] = {"No", "Yes"};
+		default = 1;
+	};
+}; 
