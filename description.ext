@@ -199,7 +199,7 @@ class Params
 		title = "AIRFORCE OPPOSITION";
 		values[] = {0, 1, 2, 3, 4, 5, 6};
 		texts[] = {"None", "Easy - Mi17, Mi24", "Normal - Mi17, Mi24, Ka52", "Hard - 2xMi17, Ka52, Mi24, Su34", "Hardcore - 3xMi17, 2xKa52, 2xMi24, Su34, Su39", "Hardcore - 4xMi17, 2xMi24, 4xSu34, 2xSu39", "Hardcore - 4xMi17, 8xSu34, 4xSu39"};
-		default = 6;
+		default = 0;
 	};
 
 	class INFANTRY
@@ -208,7 +208,7 @@ class Params
 		title = "INFANTRY OPPOSITION";
 		values[] = {0, 1, 2, 3, 4};
 		texts[] = {"None", "Easy - Max 1 group", "Normal - Max 2 groups", "Hard - Max 4 groups", "Hardcore - Max 8 groups"};
-		default = 3;
+		default = 0;
 	};
 
 	class ARMORED
