@@ -30,10 +30,16 @@
 		sleep 0.1;
 	}foreach _skill;
 
+	_unit setskill wcskill;
+
 	_unit addEventHandler ['Hit', '
 		(_this select 0) doTarget (_this select 1);
 	'];
 
-	_unit setskill wcskill;
+	_unit addEventHandler ['FiredNear', '
+		if (side (_this select 1) == wcside) then {
+			(_this select 0) doTarget (_this select 1);
+		};
+	'];
 
 	true;
