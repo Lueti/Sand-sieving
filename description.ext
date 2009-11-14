@@ -52,19 +52,19 @@ textsParam2[] = {"No Revive","Infinite - Cadet","20 - Easy ","10 - Normal","7  -
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 #define FontS "TahomaB"
-#define FontZ 		"Zeppelin32"
+#define FontZ  "Zeppelin32"
 
 class RscTitles
 {
-	titles[]={"img", "STARRING"};
+	titles[]={"LOGO", "STARRING", "ENGINE"};
 
-	class img
+	class LOGO
 	{
 		  idd=-1;
 		  movingEnable=0;
 		  duration=22;  
 		  fadein=0;    
-		  name="img";
+		  name="LOGO";
 		  controls[]={"GR","ST1"};
 
 			class GR : RscPicture
