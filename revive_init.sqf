@@ -51,7 +51,7 @@ _time_b4_JIP_spawn_dialog 		= 10000;			//array no.17 - time before the respawn d
 _perpetual_server				= 0;				//array no.62 - NOT IMPLEMENTED
 // ==================================================================
 // LIST OF PLAYABLE UNITS
-NORRN_player_units = ["j1","j2","j3","j4","j5","j6","j7","j8","j9","j10","j11","j12","j13","j14","j15","j16","j17","j18","j19","j20","j21","j22","j23","j24","j25","j26","j27","j28","j29","j30","j31","j32","j33","j34","j35","j36","j37","j38","j39","j40"];
+NORRN_player_units = ["j1","j2","j3","j4","j5","j6","j7","j8","j9","j10","j11","j12","j13","j14","j15","j16","j17","j18","j19","j20"];
 // ==================================================================
 // WELCOME SCREEN
 //titleText ["Joining the Revive Test Mission\n\n(Make sure you check the mission notes for details on how the scripts work\nand the revive_readMe in the attached pdf file for the full notes on implementing \nthe scripts in your own missions and the options available)", "BLACK FADED", 0.6]; 	// This next line can be commented out or removed if it interferes with intro movies  
