@@ -99,7 +99,7 @@
 		case 2: {wcskill = 0.3;};
 		case 3: {wcskill = 0.7;};
 		case 4: {wcskill = 1;};
-		default {wcskill = 0.3;};
+		default {wcskill = 1;};
 	};
 
 	// AIRFORCE OPPOSITION
@@ -108,24 +108,9 @@
 			wcenemyair = [];
 			};
 		case 1: {
-			wcenemyair = ["Mi17_rockets_RU", "Mi24_V"];
+			wcenemyair = ["AV8B2"];
 			};
-		case 2: {
-			wcenemyair = ["Mi17_rockets_RU", "Ka52", "Mi24_V"];
-			};
-		case 3: {
-			wcenemyair = ["Mi17_rockets_RU", "Mi17_rockets_RU", "Ka52", "Mi24_V", "Su34"];
-			};
-		case 4: {
-			wcenemyair = ["Mi17_rockets_RU", "Mi17_rockets_RU", "Mi17_rockets_RU", "Ka52", "Ka52", "Mi24_V", "Mi24_V", "Su34", "Su39"];
-			};
-		case 5: {
-			wcenemyair = ["Mi17_rockets_RU", "Mi17_rockets_RU", "Mi17_rockets_RU", "Mi17_rockets_RU", "Mi24_V", "Mi24_V", "Su34","Su34","Su34","Su34", "Su39","Su39"];
-			};
-		case 6: {
-			wcenemyair = ["Mi17_rockets_RU", "Mi17_rockets_RU", "Mi17_rockets_RU", "Mi17_rockets_RU", "Su34","Su34","Su34","Su34","Su34","Su34","Su34","Su34","Su39","Su39","Su39","Su39"];
-			};
-		default {wcenemyair = ["Mi17_rockets_RU", "Ka52", "Mi24_V"];};
+		default {wcenemyair = ["AV8B2"];};
 	};
 
 	// INFANTERY OPPOSITION

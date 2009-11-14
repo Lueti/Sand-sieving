@@ -1,8 +1,8 @@
-// -----------------------------------------------
-// Author: =[A*C]= code34 nicolas_boiteux@yahoo.fr
-// warcontext 
-// -----------------------------------------------
-if (!isServer) exitWith{};
+	// -----------------------------------------------
+	// Author: =[A*C]= code34 nicolas_boiteux@yahoo.fr
+	// warcontext 
+	// -----------------------------------------------
+	if (!isServer) exitWith{};
 
 	private [
 		"_unit",
@@ -29,5 +29,11 @@ if (!isServer) exitWith{};
 		_unit setskill [_x, _level];
 		sleep 0.1;
 	}foreach _skill;
+
+	_unit addEventHandler ['Hit', '
+		(_this select 0) doTarget (_this select 1);
+	'];
+
+	_unit setskill wcskill;
 
 	true;
