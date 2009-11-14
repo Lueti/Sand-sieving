@@ -44,7 +44,7 @@ class Mission
 	randomSeed=10399773;
 	class Intel
 	{
-		briefingName="=[A*C]=Sand Sieving 0.100";
+		briefingName="=[A*C]=Sand Sieving 0.102";
 		resistanceWest=0;
 		resistanceEast=1;
 		startWeather=0.057273924;

@@ -7,7 +7,6 @@
 
 		func_createtrigger = compile preprocessFile "warcontext\createtrigger.sqf";
 		func_createzone = compile preprocessFile "warcontext\createzone.sqf";
-		func_setskill = compile preprocessFile "warcontext\setskill.sqf";
 	
 		// external scripts
 		EXT_fnc_atot 			= compile preprocessFile "extern\EXT_fnc_atot.sqf";
