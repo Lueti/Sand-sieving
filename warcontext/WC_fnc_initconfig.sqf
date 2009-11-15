@@ -41,6 +41,9 @@
 	// size of dynamic zone generation. At 1500 of zone IA will begin to generate 
 	wctriggersize = 450;
 
+	// ia see at x meters
+	wciablind = 1000;
+
 	// time in secondes before to garbage dead body
 	wctimetogarbagedeadbody = 120;
 

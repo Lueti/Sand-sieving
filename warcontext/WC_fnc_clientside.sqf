@@ -37,6 +37,7 @@
 	WC_fnc_createradar 	= compile preprocessFile "warcontext\WC_fnc_createradar.sqf";
 	WC_fnc_repairvehicle 	= compile preprocessFile "warcontext\WC_fnc_repairvehicle.sqf";
 	WC_fnc_getobject	= compile preprocessFile "warcontext\WC_fnc_getobject.sqf";
+	WC_fnc_ianotblind	= compile preprocessFile "warcontext\WC_fnc_ianotblind.sqf";
 	WC_fnc_score		= compile preprocessFile "warcontext\WC_fnc_score.sqf";
 
 	// Init Dialog BOX
@@ -119,6 +120,10 @@
 		};
 		[player, name player, 0.5, 'ColorGreen', 'ICON', 'FDIAGONAL', 2, 'Dot', 0 , name player, false, 'RADIOFIELD'] spawn WC_fnc_attachmarkerinzone2;
 	};
+
+	player addEventHandler ['Fired', '
+		nil = [(_this select 0)] spawn WC_fnc_ianotblind;
+	'];
 
 	player addeventhandler ['killed', {
 		hidebody (_this select 0);

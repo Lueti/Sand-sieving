@@ -186,14 +186,10 @@
 
 
 	// initialisation script for units
-	if(_typeofgroup == "sniper") then {
-		nil = [_group, (position (leader _group)), 120] execVM "warcontext\WC_fnc_createtownpatrol.sqf";
-	} else {
-		_scriptinit = format["nil = [this, '%1', 'noslow'] execVM 'extern\ups.sqf';", _marker];
-		_leader = leader _group;
-		_leader setVehicleInit _scriptinit;
-		processInitCommands;
-	};
+	_scriptinit = format["nil = [this, '%1', 'noslow'] execVM 'extern\ups.sqf';", _marker];
+	_leader = leader _group;
+	_leader setVehicleInit _scriptinit;
+	processInitCommands;
 
 	if (count (units _group) < 1) then {
 		if (_motorized) then {
