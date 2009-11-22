@@ -573,23 +573,8 @@ class Mission
 	};
 	class Sensors
 	{
-		items=2;
+		items=1;
 		class Item0
-		{
-			position[]={2522.3455,115.64914,3288.532};
-			a=550;
-			b=550;
-			activationBy="ANY";
-			type="END6";
-			age="UNKNOWN";
-			expCond="(EAST countSide thislist < 10) and (WEST countside thislist > 0)";
-			class Effects
-			{
-				titleType="TEXT";
-				title="Town is clear";
-			};
-		};
-		class Item1
 		{
 			position[]={2493.9385,112.62981,1177.811};
 			interruptable=1;
