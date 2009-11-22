@@ -13,12 +13,15 @@
 	// mission start at 0
 	wclevel = 0;
 
+	// number of missions to play
+	wclevelmax = 3;
+
 	// limit of playable map
 	wcmaptopright 	= [5100, 5100];
 	wcmapbottomleft = [0, 0];
 
 	// number of missions in directory 
-	wcnumberofmissions = 0;
+	wcnumberofmissions = 3;
 
 	// number of campaigns in directory
 	wcnumberofcampaigns = 0;
@@ -27,7 +30,7 @@
 	wccampaigns = [];
 
 	// missions playable
-	wcmissions = [];
+	wcmissions = [0,1,2];
 
 	// debug for warcontext 
 	wcdebug	= false;
