@@ -47,7 +47,7 @@
 	// CREATE ARMORS	
 	for "_x" from 0 to wcmaxenemyvehicle step 1 do {
 		_position = [wcmaptopright, wcmapbottomleft, "onflat"] call WC_fnc_createposition;
-		call compile format["['armor%1', _position , 1000, 2000, wcside, ['t34'], false, wcenemyside] spawn func_createtrigger;", _x];
+		call compile format["['armor%1', _position , 1000, 1000, wcside, ['t34'], false, wcenemyside] spawn func_createtrigger;", _x];
 	};
 
 	// CREATE PICKUP
