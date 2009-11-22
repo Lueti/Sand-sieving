@@ -5,7 +5,6 @@
 	// -----------------------------------------------
 	if (!isServer) exitWith{};
 
-	private["_missionend", "_trg"];
 
 	wcmissionauthor ="=[A*C]= Lueti";
 	wcmissionname = "Fort Lyadiya";
@@ -13,7 +12,6 @@
 	wcmissiontarget ="Fort Lyadiya"; 
 
 	_position = [346,3605,0];
-	wcbattlefieldfinish = false;
 
 	wcmissionposition = _position;
 	nil = [] spawn WC_fnc_publishmission;
@@ -27,20 +25,10 @@
 	_trg setTriggerArea[wctriggersize, wctriggersize, 0, false];
 	_trg setTriggerActivation["EAST","NOT PRESENT", false];
 	_trg setTriggerStatements["this or count thislist < 2", "
-		wcbattlefieldfinish = true;
-	", ""];
-
-	_missionend = false;
-	while { !_missionend } do {
-		if(wcbattlefieldfinish) then {
-			nil = [nil,nil,rHINT,'Fort Lyadiya est clear,bon boulot!'] call RE;
-			wcmissionokW = [0,true];
-			publicvariable 'wcmissionokW';
-			wcmissionclear = true;
-			wcscore = 10;
-			_missionend = true;
-		};
-		sleep 60;
-	};
-
-	deletevehicle _trg;
+		nil = [nil,nil,rHINT,'Fort Lyadiya est clear,bon boulot!'] call RE;
+		wcsuccess = true; 
+		publicvariable 'wcsuccess'; 
+		wcsuccess = false;
+		wcmissionok = true;
+		wcmissionclear = true;
+	"", """"];", wclevel];

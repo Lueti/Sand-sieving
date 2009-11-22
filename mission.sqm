@@ -230,7 +230,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={4635.4492,113.14116,1340.9531};
+					position[]={4612.5908,115.28786,1363.8126};
 					id=19;
 					side="LOGIC";
 					vehicle="LocationLogic";
@@ -365,7 +365,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={4596.9238,124.55402,1577.3093};
+					position[]={4615.749,124.43539,1577.3093};
 					id=39;
 					side="LOGIC";
 					vehicle="BIS_clouds_Logic";
@@ -382,7 +382,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={4545.811,122.55646,1121.896};
+					position[]={4614.3882,117.76374,1139.3761};
 					id=40;
 					side="LOGIC";
 					vehicle="BIS_animals_Logic";

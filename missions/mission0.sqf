@@ -5,14 +5,11 @@
 	// -----------------------------------------------
 	if (!isServer) exitWith{};
 
-	private ["_missionend"];
-
 	wcmissionauthor = "=[A*C]= Lueti";
-	wcmissiondescriptionW = "Cette sone doit être vidée de combatants ennemis,au boulot !";
+	wcmissiondescriptionW = "Cette zone doit être vidée de combatants ennemis,au boulot !";
 	wcmissiontarget = "C'est ici que ça se passe !";
 
 	_position = [wcmaptopright, wcmapbottomleft, ""] call WC_fnc_createposition;
-	wcbattlefieldfinish = false;
 
 	wcmissionposition = _position;
 	nil = [] spawn WC_fnc_publishmission;
@@ -29,20 +26,10 @@
 	_trg setTriggerArea[wctriggersize, wctriggersize, 0, false];
 	_trg setTriggerActivation["EAST","NOT PRESENT", false];
 	_trg setTriggerStatements["this or count thislist < 2", "
-		wcbattlefieldfinish = true;
+		nil = [nil,nil,rHINT,'La zone est clear'] call RE;
+		wcsuccess = true; 
+		publicvariable 'wcsuccess'; 
+		wcsuccess = false;
+		wcmissionok = true;
+		wcmissionclear = true;
 	", ""];
-
-	_missionend = false;
-	while { !_missionend } do {
-		if(wcbattlefieldfinish) then {
-			nil = [nil,nil,rHINT,'La zone de combat est clear'] call RE;
-			wcmissionokW = [0,true];
-			publicvariable 'wcmissionokW';
-			wcmissionclear = true;
-			wcscore = 10;
-			_missionend = true;
-		};
-		sleep 60;
-	};
-
-	deletevehicle _trg;
