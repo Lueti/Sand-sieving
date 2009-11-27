@@ -68,6 +68,9 @@
 		// create zones
 		nil = [] call WC_fnc_createwarcontext;
 
+		// Init Mission loader on server
+		nil = [] spawn WC_fnc_loadmission;
+
 		// call debug
 		nil = [] spawn WC_fnc_debug;
 
